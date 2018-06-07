@@ -1,0 +1,36 @@
+{
+  "name": "casl-sample",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:isleetao/casl-sample.git",
+  "author": "Lee Tao <leetao1204@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "index": "./node_modules/.bin/ts-node ./src/index.ts",
+    "test": "./node_modules/.bin/ts-node ./test/test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^10.1.3",
+    "ts-lint": "^4.5.1",
+    "ts-node": "^6.0.5",
+    "typescript": "^2.8.3"
+  },
+  "dependencies": {
+    "@casl/ability": "^2.3.0",
+    "@casl/mongoose": "^2.1.1",
+    "@types/mongoose": "^5.0.15",
+    "mongoose": "^5.1.2",
+    "koa": "^2.5.1",
+    "@types/koa": "^2.0.46",
+    "koa-bodyparser": "^4.2.1",
+    "@types/koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.4.0",
+    "@types/koa-router": "^7.0.28",
+    "http-errors": "^1.6.3",
+    "@types/http-errors": "1.6.1",
+    "jsonwebtoken": "^8.2.2",
+    "@types/jsonwebtoken": "^7.2.7",
+    "lodash": "^4.17.10",
+    "@types/lodash": "^4.14.109"
+  }
+}
