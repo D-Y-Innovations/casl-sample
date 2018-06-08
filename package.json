@@ -7,7 +7,10 @@
   "license": "MIT",
   "scripts": {
     "index": "./node_modules/.bin/ts-node ./src/index.ts",
-    "test": "./node_modules/.bin/ts-node ./test/test.ts"
+    "index2": "./node_modules/.bin/ts-node ./src/index2.ts",
+    "test": "./node_modules/.bin/ts-node ./test/test.ts",
+    "test2": "./node_modules/.bin/ts-node ./test/test2.ts",
+    "jwt.test": "./node_modules/.bin/ts-node ./test/jwt.test.ts"
   },
   "devDependencies": {
     "@types/node": "^10.1.3",

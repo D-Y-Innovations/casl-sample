@@ -6,35 +6,44 @@ import * as m from 'mongoose'
 
 (async () => {
     
-    await m.connect('mongodb://localhost:27017/blog')
+    // await m.connect('mongodb://localhost:27017/blog')
 
-    const user = await User.findOne({email: 'l@dy.com'})
+    // const user = await User.findOne({email: 'l@dy.com'})
 
     
 
-    if(user != null) {
+    // if(user != null) {
 
-        console.log(user._id.toString())
+    //     console.log(user._id.toString())
 
-        if('5b17d39d8adb3e37e8d59cee' == user._id.toString()){
-            console.log(true)
-        }
+    //     if('5b17d39d8adb3e37e8d59cee' == user._id.toString()){
+    //         console.log(true)
+    //     }
 
-        // const ability = defineAbility(user)
-        // console.log(ability.rules)
+    //     // const ability = defineAbility(user)
+    //     // console.log(ability.rules)
 
-        // const fileds = extra.permittedFieldsOf(ability, 'own', 'Essay')
-        // console.log(fileds)
+    //     // const fileds = extra.permittedFieldsOf(ability, 'own', 'Essay')
+    //     // console.log(fileds)
 
-        // const users = await Essay.accessibleBy(ability, 'own').find()
-        // console.log(users)
+    //     // const users = await Essay.accessibleBy(ability, 'own').find()
+    //     // console.log(users)
      
-        // console.log(ability.can('create', 'Essay', ''))
+    //     // console.log(ability.can('create', 'Essay', ''))
 
-    }
+    // }
     
 
-    await m.disconnect()
+    // await m.disconnect()
+
+    
+
+    const ability = AbilityBuilder.define((can: any) => {
+        Ability.addAlias('read', 'read /home/lt')
+        can('read', 'all')
+    })
+
+    console.log(ability.can('read', '/home/lt/a/b/c/d/e/f/g/i.txt'))
 
 })()
 
@@ -70,8 +79,10 @@ function defineAbility(user: UserDocu & m.Document) {
     // can(['read'], 'User', { email: user.email })
 
     // can('own', 'User', { email: user.email })
-    can('create', 'Essay')
-    can('create', 'Essay', { email: user.email })
+    
+    can('create', '/home/lt/')
+
+    // can('create', 'Essay', { email: user.email })
 
     return new Ability(rules)
 }
